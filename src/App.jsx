@@ -15,4 +15,3 @@ const App = () =>{
   )
 }
 export default App;
-"Add item input form and display functionality for invoice generator"
