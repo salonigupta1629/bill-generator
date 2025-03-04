@@ -26,22 +26,22 @@ setFormValue(prevState => ({
 }));
 };
 return (
-    <div>
-        <h1 className='text-4xl font-semibold mb-4'>Bill/Invoice Generator</h1>
+    <div className="bg-gray-200 h-[550px] p-12  w-[500px] mt-2  rounded-lg shadow-xl">
+        <h1 className='text-4xl font-semibold mb-7'>Bill/Invoice Generator</h1>
         <form className='flex flex-col'onSubmit={handleAdd} >
-          <div className='flex flex-1 flex-col mb-5'>
-          <label className='mb-1'>Item:</label>
+          <div className='flex flex-1 flex-col mb-7'>
+          <label className='mb-2 font-semibold'>Item:</label>
           <input onChange={handleOnChange} name="item" value={formValue.currentItem.item} type="text" className='p-3 border border-gray-600 rounded' placeholder='Item Name'/>
           </div>
-          <div className='flex flex-1 flex-col mb-5'>
-          <label className='mb-1'>Quantity:</label>
+          <div className='flex flex-1 flex-col mb-7'>
+          <label className='mb-2 font-semibold'>Quantity:</label>
           <input onChange={handleOnChange} name="qty" value={formValue.currentItem.qty} type="number" className='p-3 border border-gray-600 rounded' placeholder='Item Quantity'/>
           </div>
-          <div className='flex flex-1 flex-col mb-5'>
-          <label className='mb-1'>Price:</label>
+          <div className='flex flex-1 flex-col mb-7'>
+          <label className='mb-2 font-semibold'>Price:</label>
           <input onChange={handleOnChange} name="price" value={formValue.currentItem.price} type="number" className='p-3 border border-gray-600 rounded' placeholder='Item Price'/>
           </div>
-          <button className='w-36 py-2  font-semibold rounded bg-green-500 text-white rounded mb-5'>Add Item</button>
+          <button className='w-36 py-2  font-semibold rounded bg-green-500 text-white rounded mt-3 mx-auto'>Add Item</button>
         </form>
     </div>
   )
