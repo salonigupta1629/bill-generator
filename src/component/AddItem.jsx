@@ -14,6 +14,11 @@ setFormValue(prevState => ({
 
 const handleAdd = (e) => {
 e.preventDefault();
+
+if( !formValue.currentItem.item || !formValue.currentItem.qty || !formValue.currentItem.price){
+alert("Please fill all fields before adding an item.");
+return;
+}
 setFormValue(prevState => ({
   ...prevState,
   items: [...prevState.items, prevState.currentItem],
@@ -30,13 +35,13 @@ return (
           </div>
           <div className='flex flex-1 flex-col mb-5'>
           <label className='mb-1'>Quantity:</label>
-          <input onChange={handleOnChange} name="qty" value={formValue.currentItem.qty} type="text" className='p-3 border border-gray-600 rounded' placeholder='Item Quantity'/>
+          <input onChange={handleOnChange} name="qty" value={formValue.currentItem.qty} type="number" className='p-3 border border-gray-600 rounded' placeholder='Item Quantity'/>
           </div>
           <div className='flex flex-1 flex-col mb-5'>
           <label className='mb-1'>Price:</label>
-          <input onChange={handleOnChange} name="price" value={formValue.currentItem.price} type="text" className='p-3 border border-gray-600 rounded' placeholder='Item Price'/>
+          <input onChange={handleOnChange} name="price" value={formValue.currentItem.price} type="number" className='p-3 border border-gray-600 rounded' placeholder='Item Price'/>
           </div>
-          <button className='w-36 py-2 rounded bg-green-500 text-white rounded'>Add Item</button>
+          <button className='w-36 py-2  font-semibold rounded bg-green-500 text-white rounded mb-5'>Add Item</button>
         </form>
     </div>
   )
